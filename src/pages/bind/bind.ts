@@ -24,4 +24,8 @@ export class BindPage {
   backBtn() {
     this.navCtrl.pop();
   }
+
+  ionViewWillUnload() {
+    console.error('디스트로이될때래');
+  }
 }
