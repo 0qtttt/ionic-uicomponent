@@ -1,16 +1,25 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'
 })
-export class HomePage implements OnInit {
+export class HomePage {
   constructor(public navCtrl: NavController) {}
+  items = [{ id: 1, name: '첫번째 item' }, { id: 2, name: '두번째 item' }, { id: 3, name: '세번째 item' }];
+  disabledSwitch = false;
+  username = 'hohohoho';
 
-  title: string;
+  itemSelected(item) {
+    alert(item.id + item.name);
+  }
 
-  ngOnInit(): void {
-    this.title = 'ㅋ케케케케켘ㅋㅋ';
+  MyButton(event) {
+    if (this.username) {
+      this.navCtrl.push('bindPage', { name: this.username });
+    } else {
+      alert('입력 해주세요.');
+    }
   }
 }
