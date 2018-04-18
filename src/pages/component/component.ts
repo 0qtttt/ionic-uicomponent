@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, ActionSheetController, Platform, ModalController } from 'ionic-angular';
+import {Component} from '@angular/core';
+import {IonicPage, NavController, NavParams, ActionSheetController, Platform, ModalController} from 'ionic-angular';
 
 /**
  * Generated class for the ComponentPage page.
@@ -20,7 +20,8 @@ export class ComponentPage {
     public actionSheetCrtl: ActionSheetController,
     public platform: Platform,
     public modalCtrl: ModalController
-  ) {}
+  ) {
+  }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad ComponentPage');
@@ -59,7 +60,14 @@ export class ComponentPage {
   }
 
   modal() {
-	let modal = this.modalCtrl.create('ModalPage');
-	modal.present();
+    let modal = this.modalCtrl.create('ModalPage');
+    modal.onDidDismiss(data => {
+      console.log(data)
+    })
+    modal.present();
+  }
+
+  slide() {
+    this.navCtrl.push('SlidePage')
   }
 }
