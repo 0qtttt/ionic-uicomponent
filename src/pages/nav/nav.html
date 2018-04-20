@@ -22,4 +22,9 @@
     <ion-label fixed>E메일</ion-label>
     <ion-input type="text" readonly [value]="accountData.email"></ion-input>
   </ion-item>
+
+  <ion-item-options side=“left">
+    <button ion-button (click)="sendEmail(item,user)">Email</button>
+  </ion-item-options>
+
 </ion-content>
