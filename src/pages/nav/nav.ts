@@ -1,6 +1,7 @@
 import {Component} from '@angular/core';
-import {IonicPage, NavController, NavParams} from 'ionic-angular';
+import {IonicPage, ItemSliding, NavController, NavParams} from 'ionic-angular';
 import {AccountInterface} from "../../interfaces/account";
+import {EmailComposer} from "@ionic-native/email-composer";
 
 /**
  * Generated class for the NavPage page.
